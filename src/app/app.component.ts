@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'country-autocomplete';
+
+  showSelectedCountry = "Bangladesh"
+  showSelectedCountryCode = "BD"
+
+  countrySelected($event: any) {
+    this.showSelectedCountry = $event.value.Name
+    this.showSelectedCountryCode = $event.value.Code
+  }
 }

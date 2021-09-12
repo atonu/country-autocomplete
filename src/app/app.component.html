@@ -1,1 +1,7 @@
-<app-country-autocomplete></app-country-autocomplete>
+<h2>Country: {{showSelectedCountry}}</h2>
+<h2>Code: {{showSelectedCountryCode}}</h2>
+<br>
+<app-country-autocomplete
+  [countryCode]="'BD'"
+  (country)="countrySelected($event)"
+></app-country-autocomplete>
