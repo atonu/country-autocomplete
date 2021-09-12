@@ -1,0 +1,49 @@
+<!--<select>
+  <option *ngFor="let cntry of countries">{{cntry}}</option>
+</select>-->
+
+<form class="example-form">
+    <div style="margin-bottom: 10px" *ngIf="selectedCountry !== ''">
+        <div *ngIf="customLabel === ''"
+             style="font-size: 13px; margin-bottom: 5px">{{'NEW_ADVISOR_REQUEST.COUNTRY'|translate}}</div>
+        <div *ngIf="customLabel !== ''"
+             style="font-size: 13px; margin-bottom: 5px">{{'NEW_ADVISOR_REQUEST.NATIONALITY' |translate}}</div>
+        <mat-chip-list class="member-chips">
+            <mat-chip class="member-chip mb-4" fxLayout="row" fxLayoutAlign="start center">
+                <div style="margin-left: 3px"
+                     [ngStyle]="disabled? {'margin-right': '3px'}:{'margin-right': '0px'}"
+                >{{selectedCountry}}</div>
+                <mat-icon
+                    *ngIf="!disabled"
+                    class="ml-8 s-16 chip-remove cursor-pointer"
+                    (click)="removeCountry()">
+                    close
+                </mat-icon>
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+    <mat-form-field appearance="outline" class="example-full-width" *ngIf="selectedCountry === ''">
+        <input type="search"
+               [placeholder]="customPlaceholder.length<1 ? ('NEW_ADVISOR_REQUEST.COUNTRY'|translate) : ('NEW_ADVISOR_REQUEST.'+customPlaceholder|translate)"
+               required
+               aria-label="Text"
+               matInput
+               #country
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <div style="padding: 10px">
+                <small>{{'NEW_ADVISOR_REQUEST.SELECT_COUNTRY'|translate}}</small>
+            </div>
+            <mat-option *ngFor="let option of filteredOptions | async"
+                        (keyup.enter)="setCountry(option)"
+                        (keydown.enter)="setCountry(option)"
+                        (click)="setCountry(option)">
+                <div>{{option.Name}}</div>
+            </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="customErrorMsg === ''">{{'NEW_ADVISOR_REQUEST.COUNTRY_ERR'|translate}}</mat-error>
+        <mat-error *ngIf="customErrorMsg !== ''">{{'NEW_ADVISOR_REQUEST.' + customErrorMsg|translate}}</mat-error>
+    </mat-form-field>
+        <mat-error *ngIf="error && myControl.touched">Invalid country input</mat-error>
+</form>

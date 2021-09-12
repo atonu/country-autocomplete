@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {CountryAutocompleteModule} from "./country-autocomplete/country-autocomplete.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +14,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CountryAutocompleteModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
