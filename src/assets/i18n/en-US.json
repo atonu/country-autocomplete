@@ -192,5 +192,11 @@
     "UN": "Vietnam",
     "CF": "Central African Republic",
     "CY": "Cyprus"
+  },
+  "TEXTS": {
+    "COUNTRY": "Country",
+    "NATIONALITY": "Nationality",
+    "SELECT_COUNTRY": "Select Country",
+    "COUNTRY_ERR": "Please enter a country"
   }
 }

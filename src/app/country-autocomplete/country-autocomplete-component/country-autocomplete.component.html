@@ -5,9 +5,9 @@
 <form class="example-form">
     <div style="margin-bottom: 10px" *ngIf="selectedCountry !== ''">
         <div *ngIf="customLabel === ''"
-             style="font-size: 13px; margin-bottom: 5px">{{'NEW_ADVISOR_REQUEST.COUNTRY'|translate}}</div>
+             style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.COUNTRY'|translate}}</div>
         <div *ngIf="customLabel !== ''"
-             style="font-size: 13px; margin-bottom: 5px">{{'NEW_ADVISOR_REQUEST.NATIONALITY' |translate}}</div>
+             style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.NATIONALITY' |translate}}</div>
         <mat-chip-list class="member-chips">
             <mat-chip class="member-chip mb-4" fxLayout="row" fxLayoutAlign="start center">
                 <div style="margin-left: 3px"
@@ -24,7 +24,7 @@
     </div>
     <mat-form-field appearance="outline" class="example-full-width" *ngIf="selectedCountry === ''">
         <input type="search"
-               [placeholder]="customPlaceholder.length<1 ? ('NEW_ADVISOR_REQUEST.COUNTRY'|translate) : ('NEW_ADVISOR_REQUEST.'+customPlaceholder|translate)"
+               [placeholder]="customPlaceholder.length<1 ? ('TEXTS.COUNTRY'|translate) : ('TEXTS.'+customPlaceholder|translate)"
                required
                aria-label="Text"
                matInput
@@ -33,7 +33,7 @@
                [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
             <div style="padding: 10px">
-                <small>{{'NEW_ADVISOR_REQUEST.SELECT_COUNTRY'|translate}}</small>
+                <small>{{'TEXTS.SELECT_COUNTRY'|translate}}</small>
             </div>
             <mat-option *ngFor="let option of filteredOptions | async"
                         (keyup.enter)="setCountry(option)"
@@ -42,8 +42,8 @@
                 <div>{{option.Name}}</div>
             </mat-option>
         </mat-autocomplete>
-        <mat-error *ngIf="customErrorMsg === ''">{{'NEW_ADVISOR_REQUEST.COUNTRY_ERR'|translate}}</mat-error>
-        <mat-error *ngIf="customErrorMsg !== ''">{{'NEW_ADVISOR_REQUEST.' + customErrorMsg|translate}}</mat-error>
+        <mat-error *ngIf="customErrorMsg === ''">{{'TEXTS.COUNTRY_ERR'|translate}}</mat-error>
+        <mat-error *ngIf="customErrorMsg !== ''">{{'TEXTS.' + customErrorMsg|translate}}</mat-error>
     </mat-form-field>
         <mat-error *ngIf="error && myControl.touched">Invalid country input</mat-error>
 </form>

@@ -38,7 +38,6 @@ export class CountryAutocompleteComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(countries);
     this.ENcountrylist = countries.countryList.countries;
     if (this.countryCode && this.countryCode !== '') {
       if (this.countryCode.length <= 2) {
@@ -83,7 +82,7 @@ export class CountryAutocompleteComponent implements OnInit {
     let emitPayload = {
       Name: '',
       Code: country.Code
-    };debugger
+    };
     emitPayload.Name = this.ENcountrylist.filter((option: any) =>
       option.Code.includes(country.Code))[0] ? this.ENcountrylist.filter((option: { Code: string | any[]; }) => option.Code.includes(country.Code))[0].Name : '';
     this.country.emit({

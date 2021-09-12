@@ -193,5 +193,11 @@
     "YE": "Yemen",
     "ZM": "Zambia",
     "ZW": "Zimbabwe"
+  },
+  "TEXTS": {
+    "COUNTRY": "Country",
+    "NATIONALITY": "Nationality",
+    "SELECT_COUNTRY": "Select Country",
+    "COUNTRY_ERR": "Please enter a country"
   }
 }
