@@ -6,16 +6,17 @@
         <div *ngIf="customLabel !== ''"
              style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.' + customLabel |translate}}</div>
         <mat-chip-list class="member-chips">
-            <mat-chip class="member-chip mb-4" fxLayout="row" fxLayoutAlign="start center">
-                <div style="margin-left: 3px"
-                     [ngStyle]="disabled? {'margin-right': '3px'}:{'margin-right': '0px'}"
-                >{{"COUNTRY." + selectedCountry | translate}}</div>
-                <mat-icon
-                    *ngIf="!disabled"
-                    class="ml-8 s-16 chip-remove cursor-pointer"
-                    (click)="removeCountry()">
-                    close
-                </mat-icon>
+            <mat-chip style="background-color: white"
+              class="member-chip mb-4">
+              <div style="margin-left: 3px"
+                   [ngStyle]="disabled? {'margin-right': '3px'}:{'margin-right': '0px'}"
+              >{{"COUNTRY." + selectedCountry | translate}}</div>
+              <mat-icon
+                *ngIf="!disabled"
+                class="ml-8 s-16 chip-remove cursor-pointer"
+                (click)="removeCountry()">
+                close
+              </mat-icon>
             </mat-chip>
         </mat-chip-list>
     </div>

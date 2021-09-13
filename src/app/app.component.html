@@ -1,6 +1,7 @@
-<div fxLayoutAlign="center start">
-  <div fxLayout="column" fxLayoutGap="30px">
-    <button class="mt-20"
+<div class="gradiant" fxLayoutAlign="center start">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <div style="width: 200px" fxLayoutAlign="end end">
+    <button class="language-button"
       mat-raised-button [matMenuTriggerFor]="settingsMenu">{{browserLang | uppercase}}</button>
 
     <mat-menu style="height: 200px" #settingsMenu>
@@ -8,14 +9,12 @@
             (click)="changeLanguage(lang)"
             mat-menu-item>{{lang.key}}</menu>
     </mat-menu>
-
+    </div>
     <app-country-autocomplete
-      [countryCode]="'DE'"
       (country)="countrySelected($event)"
       [customPlaceholder]="'COUNTRY'"
       [customErrorMsg]="'COUNTRY_ERR'"
       [customLabel]="'COUNTRY'"
-      
     >
     </app-country-autocomplete>
 
@@ -23,6 +22,9 @@
       {{"COUNTRY." + showSelectedCountry | translate}}
     </h2>
     <h2 *ngIf="showSelectedCountryCode">Code: {{showSelectedCountryCode}}</h2>
+    <img *ngIf="showSelectedCountryCode && showSelectedCountryCode.length>0"
+         style="width: 500px"
+         src="assets/png1000px/{{showSelectedCountryCode | lowercase}}.png">
     <br>
   </div>
 </div>
