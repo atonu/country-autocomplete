@@ -10,6 +10,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from "@angular/material/button";
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatOptionModule,
     MatMenuModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FlexModule
   ],
   providers: [],
   bootstrap: [AppComponent]

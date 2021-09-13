@@ -1,19 +1,23 @@
-<button mat-raised-button [matMenuTriggerFor]="settingsMenu">{{browserLang | uppercase}}</button>
+<div fxLayoutAlign="center start">
+  <div fxLayout="column" fxLayoutGap="30px">
+    <button class="mt-20"
+      mat-raised-button [matMenuTriggerFor]="settingsMenu">{{browserLang | uppercase}}</button>
 
-<mat-menu #settingsMenu>
-  <menu *ngFor="let lang of languages"
-        (click)="changeLanguage(lang)"
-        mat-menu-item>{{lang.key}}</menu>
-</mat-menu>
+    <mat-menu style="height: 200px" #settingsMenu>
+      <menu *ngFor="let lang of languages"
+            (click)="changeLanguage(lang)"
+            mat-menu-item>{{lang.key}}</menu>
+    </mat-menu>
 
+    <app-country-autocomplete
+      [countryCode]="'AS'"
+      (country)="countrySelected($event)">
+    </app-country-autocomplete>
 
-<h2 *ngIf="showSelectedCountry">Country:
-  {{"COUNTRY." + showSelectedCountry | translate}}
-</h2>
-<h2 *ngIf="showSelectedCountryCode">Code: {{showSelectedCountryCode}}</h2>
-<br>
-
-<app-country-autocomplete
-  [countryCode]="'AS'"
-  (country)="countrySelected($event)"
-></app-country-autocomplete>
+    <h2 *ngIf="showSelectedCountry">Country:
+      {{"COUNTRY." + showSelectedCountry | translate}}
+    </h2>
+    <h2 *ngIf="showSelectedCountryCode">Code: {{showSelectedCountryCode}}</h2>
+    <br>
+  </div>
+</div>
