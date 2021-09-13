@@ -42,5 +42,10 @@ export class AppComponent {
 
   setCountryToCountryAutoComplete(countryCode: string) {
     CountryAutocompleteComponent.getCountryChangeWatcher().next(countryCode)
+
+    //changing data in app-component
+    this.showSelectedCountryCode = countryCode
+    this.showSelectedCountry = "UNITED KINGDOM"
+
   }
 }
