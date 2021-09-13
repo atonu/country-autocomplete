@@ -1,7 +1,19 @@
-<h2>Country: {{showSelectedCountry}}</h2>
-<h2>Code: {{showSelectedCountryCode}}</h2>
+<button mat-raised-button [matMenuTriggerFor]="settingsMenu">{{browserLang | uppercase}}</button>
+
+<mat-menu #settingsMenu>
+  <menu *ngFor="let lang of languages"
+        (click)="changeLanguage(lang)"
+        mat-menu-item>{{lang.key}}</menu>
+</mat-menu>
+
+
+<h2 *ngIf="showSelectedCountry">Country:
+  {{"COUNTRY." + showSelectedCountry | translate}}
+</h2>
+<h2 *ngIf="showSelectedCountryCode">Code: {{showSelectedCountryCode}}</h2>
 <br>
+
 <app-country-autocomplete
-  [countryCode]="'BD'"
+  [countryCode]="'AS'"
   (country)="countrySelected($event)"
 ></app-country-autocomplete>

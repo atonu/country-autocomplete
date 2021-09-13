@@ -68,7 +68,7 @@ export class countryList {
     {"Code": "ER", "name": "ERITREA"},
     {"Code": "EE", "name": "ESTONIA"},
     {"Code": "ET", "name": "ETHIOPIA"},
-    {"Code": "FK", "name": "FALKLAND ISLANDS (MALVINAS)'Malvinas)"},
+    {"Code": "FK", "name": "FALKLAND ISLANDS"},
     {"Code": "FO", "name": "FAROE ISLANDS"},
     {"Code": "FJ", "name": "FIJI"},
     {"Code": "FI", "name": "FINLAND"},

@@ -6,6 +6,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {CountryAutocompleteModule} from "./country-autocomplete/country-autocomplete.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatOptionModule} from "@angular/material/core";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -15,7 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     CountryAutocompleteModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslateModule,
+    MatOptionModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

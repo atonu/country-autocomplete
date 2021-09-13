@@ -12,7 +12,7 @@
             <mat-chip class="member-chip mb-4" fxLayout="row" fxLayoutAlign="start center">
                 <div style="margin-left: 3px"
                      [ngStyle]="disabled? {'margin-right': '3px'}:{'margin-right': '0px'}"
-                >{{selectedCountry}}</div>
+                >{{"COUNTRY." + selectedCountry | translate}}</div>
                 <mat-icon
                     *ngIf="!disabled"
                     class="ml-8 s-16 chip-remove cursor-pointer"
@@ -39,7 +39,7 @@
                         (keyup.enter)="setCountry(option)"
                         (keydown.enter)="setCountry(option)"
                         (click)="setCountry(option)">
-                <div>{{option.Name}}</div>
+              <div>{{"COUNTRY." + option.Name | translate}}</div>
             </mat-option>
         </mat-autocomplete>
         <mat-error *ngIf="customErrorMsg === ''">{{'TEXTS.COUNTRY_ERR'|translate}}</mat-error>
