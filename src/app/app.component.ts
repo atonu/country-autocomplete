@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {CountryAutocompleteComponent} from "./country-autocomplete/country-autocomplete-component/country-autocomplete.component";
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent {
     {'key': 'FR', 'value': 'fr-FR'},
     {'key': 'IT', 'value': 'it-IT'}
   ]
+  show: boolean = false;
 
   constructor(
     private translateService: TranslateService
@@ -36,5 +38,9 @@ export class AppComponent {
   changeLanguage(lang: any) {
     this.translateService.use(lang.value);
     this.browserLang = lang.key
+  }
+
+  setCountryToCountryAutoComplete(countryCode: string) {
+    CountryAutocompleteComponent.getCountryChangeWatcher().next(countryCode)
   }
 }

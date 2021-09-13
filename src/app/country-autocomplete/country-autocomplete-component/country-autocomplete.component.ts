@@ -23,7 +23,7 @@ export class CountryAutocompleteComponent implements OnInit {
   @Input() customPlaceholder: string = '';
   @ViewChild('country', {static: false}) countrySearch: { nativeElement: { focus: () => void; }; } | undefined;
   error: boolean = false;
-  static countryChangeWatcher$ = new Subject<any>();
+  private static countryChangeWatcher$ = new Subject<any>();
   selectedCountry: String = '';
   private ENcountrylist: any = [];
   countries = countries.countryList.countries
@@ -58,6 +58,8 @@ export class CountryAutocompleteComponent implements OnInit {
 
     CountryAutocompleteComponent.countryChangeWatcher$.subscribe(country => {
       this.selectedCountry = country;
+      this.countryCode = country;
+      this.ngOnInit()
     });
 
     this.filteredOptions = this.myControl.valueChanges

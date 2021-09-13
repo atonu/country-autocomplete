@@ -11,6 +11,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from "@angular/material/button";
 import {FlexModule} from "@angular/flex-layout";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {FlexModule} from "@angular/flex-layout";
     MatOptionModule,
     MatMenuModule,
     MatButtonModule,
+    MatSlideToggleModule,
     MatFormFieldModule,
     FlexModule
   ],

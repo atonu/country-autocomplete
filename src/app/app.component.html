@@ -22,9 +22,22 @@
       {{"COUNTRY." + showSelectedCountry | translate}}
     </h2>
     <h2 *ngIf="showSelectedCountryCode">Code: {{showSelectedCountryCode}}</h2>
+
     <img *ngIf="showSelectedCountryCode && showSelectedCountryCode.length>0"
          style="width: 500px"
          src="assets/png1000px/{{showSelectedCountryCode | lowercase}}.png">
-    <br>
+
+    <div style="position: absolute; bottom: 20px">
+      <div fxLayout="row"
+           style="display: flex; align-self: end"
+           fxLayoutAlign="center center"
+           fxLayoutGap="20px">
+        <mat-slide-toggle (change)="show = !show">Reverse function!</mat-slide-toggle>
+        <button *ngIf="show" mat-raised-button (click)="setCountryToCountryAutoComplete('GB')">set "United Kingdom" to
+          country
+          autocomplete
+        </button>
+      </div>
+    </div>
   </div>
 </div>
