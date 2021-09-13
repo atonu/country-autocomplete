@@ -42,10 +42,10 @@ export class CountryAutocompleteComponent implements OnInit {
     if (this.countryCode && this.countryCode !== '') {
       if (this.countryCode.length <= 2) {
         this.countryCode = this.ENcountrylist.filter((option: any) =>
-          option.Code.includes(this.countryCode))[0] ? this.ENcountrylist.filter((option: any) => option.Code.includes(this.countryCode))[0].Code : 'CH';
+          option.Code.includes(this.countryCode))[0] ? this.ENcountrylist.filter((option: any) => option.Code.includes(this.countryCode))[0].Code : '';
       } else {
         this.countryCode = this.ENcountrylist.filter((option: any) =>
-          option.Name.includes(this.countryCode))[0] ? this.ENcountrylist.filter((option: any) => option.Name.includes(this.countryCode))[0].Code : 'CH';
+          option.Name.includes(this.countryCode))[0] ? this.ENcountrylist.filter((option: any) => option.Name.includes(this.countryCode))[0].Code : '';
       }
     }
 

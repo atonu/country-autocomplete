@@ -4,7 +4,7 @@
       <div *ngIf="customLabel === ''"
            style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.COUNTRY'|translate}}</div>
       <div *ngIf="customLabel !== ''"
-           style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.' + customLabel |translate}}</div>
+           style="font-size: 13px; margin-bottom: 5px">{{customLabel | translate}}</div>
       <mat-chip-list class="member-chips">
         <mat-chip style="background-color: white"
                   class="member-chip mb-4">
@@ -22,7 +22,7 @@
     </div>
     <mat-form-field appearance="outline" class="example-full-width" *ngIf="selectedCountry === ''">
         <input type="search"
-               [placeholder]="customPlaceholder.length<1 ? ('TEXTS.COUNTRY'|translate) : ('TEXTS.'+customPlaceholder|translate)"
+               [placeholder]="customPlaceholder.length<1 ? ('TEXTS.COUNTRY'|translate) : (customPlaceholder|translate)"
                required
                aria-label="Text"
                matInput
@@ -41,7 +41,7 @@
             </mat-option>
         </mat-autocomplete>
         <mat-error *ngIf="customErrorMsg === ''">{{'TEXTS.COUNTRY_ERR'|translate}}</mat-error>
-        <mat-error *ngIf="customErrorMsg !== ''">{{'TEXTS.' + customErrorMsg|translate}}</mat-error>
+      <mat-error *ngIf="customErrorMsg !== ''">{{customErrorMsg|translate}}</mat-error>
     </mat-form-field>
         <mat-error *ngIf="error && myControl.touched">Invalid country input</mat-error>
 </form>
