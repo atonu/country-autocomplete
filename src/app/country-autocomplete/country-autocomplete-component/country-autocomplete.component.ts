@@ -48,15 +48,7 @@ export class CountryAutocompleteComponent implements OnInit {
           option.Name.includes(this.countryCode))[0] ? this.ENcountrylist.filter((option: any) => option.Name.includes(this.countryCode))[0].Code : 'CH';
       }
     }
-    /*if (this.translateService.getBrowserLang() === 'de-DE') {
-      this.options = DEcountrylist.DEcountrylist;
-    } else if (this.currentLang === 'fr') {
-      this.options = FRcountrylist.FRcountrylist;
-    } else if (this.currentLang === 'it') {
-      this.options = ITcountrylist.ITcountrylist;
-    } else {
-      this.options = countries;
-    }*/
+
     this.options = countries.countryList.countries;
     if (this.countryCode && this.countryCode !== '') {
       this.selectedCountry = this.options.filter((option: any) =>

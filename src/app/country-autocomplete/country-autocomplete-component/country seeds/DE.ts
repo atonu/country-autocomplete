@@ -1,5 +1,5 @@
 export class countryList {
-  public static countries = [
+  public static DEcountrylist = [
     {"Code": "AF", "name": "AFGHANISTAN"},
     {"Code": "AL", "name": "ALBANIA"},
     {"Code": "DZ", "name": "ALGERIA"},

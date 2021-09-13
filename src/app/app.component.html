@@ -10,8 +10,13 @@
     </mat-menu>
 
     <app-country-autocomplete
-      [countryCode]="'AS'"
-      (country)="countrySelected($event)">
+      [countryCode]="'DE'"
+      (country)="countrySelected($event)"
+      [customPlaceholder]="'COUNTRY'"
+      [customErrorMsg]="'COUNTRY_ERR'"
+      [customLabel]="'COUNTRY'"
+      
+    >
     </app-country-autocomplete>
 
     <h2 *ngIf="showSelectedCountry">Country:

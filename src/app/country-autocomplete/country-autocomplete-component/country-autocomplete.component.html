@@ -4,7 +4,7 @@
         <div *ngIf="customLabel === ''"
              style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.COUNTRY'|translate}}</div>
         <div *ngIf="customLabel !== ''"
-             style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.NATIONALITY' |translate}}</div>
+             style="font-size: 13px; margin-bottom: 5px">{{'TEXTS.' + customLabel |translate}}</div>
         <mat-chip-list class="member-chips">
             <mat-chip class="member-chip mb-4" fxLayout="row" fxLayoutAlign="start center">
                 <div style="margin-left: 3px"
