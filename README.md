@@ -1,10 +1,30 @@
 # CountryAutocomplete
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+This is a tool to easily search/auto complete and translate a list of countries in an angular project.
+This module is made to easily interract with forms in an angular project. This will emit country code and name to be used in angular components.
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+import the 'CountryAutocompleteModule' in the module you are working with:
+    import {CountryAutocompleteModule} from "path";
+    
+CountryAutocompleteModule has a translations module setup, that works with the translation files inside /assets.
+
+import the component and the selector  "<app-country-autocomplete></app-country-autocomplete>"
+
+the attributes are listed below.
+
+variable              type            Use
+
+[countryCode]         string          Pass a country code/Country Name to set a default value. I.e: 'DE' / 'Germany'
+(country)             EventEmitter    returns the selected country as event emitter back to the component. Usable to patch value to forms and other functionalities.
+[disable]             boolean         disables component
+[customPlaceholder]   string          Pass a custom placeholder. Send language key and add the key inside language files (json) if necessary.
+[customErrorMsg]      string          Pass a custom error message. Send language key and add the key inside language files (json) if necessary.
+[customLabel]         string          Pass a custom label. Send language key and add the key inside language files (json) if necessary.
+
+
+
 
 ## Code scaffolding
 
