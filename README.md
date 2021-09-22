@@ -1,50 +1,34 @@
 # CountryAutocomplete
 
-This is a tool to easily search/auto complete and translate a list of countries in an angular project.
-This module is made to easily interract with forms in an angular project. This will emit country code and name to be used in angular components.
+This is a tool to easily search / auto complete and translate a list of countries in an angular project.
+This module is made to easily interract with forms in an angular project. This will emit country code and name to be used in angular components as well as take country code / name as input for viewing a selected country inside a mat chip. The purpose of this project is to save development time for building a country search and select tool, which is quite commonly used.
 
 ## Setup
 
-import the 'CountryAutocompleteModule' in the module you are working with:
-import {CountryAutocompleteModule} from "path";
+import the `CountryAutocompleteModule` in the module you are working with:
+`import {CountryAutocompleteModule} from "..path";`
 
-CountryAutocompleteModule has a translations module setup, that works with the translation files inside /assets.
+`CountryAutocompleteModule` has a translations module integrated, that works with the translation files inside `./assets`.
 
-import the component and the selector
-"<app-country-autocomplete></app-country-autocomplete>"
+import the component and use the selector from the component's html.
+`<app-country-autocomplete></app-country-autocomplete>`
 
-the attributes are listed below.
+The attributes inside the selector are listed below.
 
-variable              type            Use
+    Variable              Type            Use
 
-[countryCode]         string          Pass a country code/Country Name to set a default value. I.e: 'DE' / 'Germany'
-(country)             EventEmitter    returns the selected country as event emitter back to the component. Usable to patch value to forms and other functionalities.
-[disable]             boolean         disables component
-[customPlaceholder]   string          Pass a custom placeholder. Send language key and add the key inside language files (json) if necessary.
-[customErrorMsg]      string          Pass a custom error message. Send language key and add the key inside language files (json) if necessary.
-[customLabel]         string          Pass a custom label. Send language key and add the key inside language files (json) if necessary.
+    [countryCode]         string          Pass a country code/Country Name to set a default value. I.e: 'DE' / 'Germany'
+    (country)             EventEmitter    Returns the selected country as event emitter back to the component. Usable to patch value to forms and other functionalities.
+    [disable]             boolean         Disables component
+    [customPlaceholder]   string          Passes a custom placeholder. Send language key and add the key inside language files (json) if necessary.
+    [customErrorMsg]      string          Passes a custom error message. Send language key and add the key inside language files (json) if necessary.
+    [customLabel]         string          Passes a custom label. Send language key and add the key inside language files (json) if necessary.
 
+## Examples 
+`CountryAutocompleteComponent` has been implemented inside the AppComponent in this project. Flags are shown for visual aesthetics.
 
-## Development server
+## Thanks to
+Special thanks to Hampus Borgos. I took assets from the repository https://github.com/hampusborgos/country-flags. here all rights reserved by Hampus Borgos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Running project
+In terminal  run `ng serve` to start run the project.
