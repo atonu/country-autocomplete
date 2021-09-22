@@ -36,6 +36,7 @@ export class AppComponent {
   }
 
   changeLanguage(lang: any) {
+    debugger
     this.translateService.use(lang.value);
     this.browserLang = lang.key
   }
