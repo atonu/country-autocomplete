@@ -45,7 +45,7 @@ export class AppComponent {
 
     //changing data in app-component
     this.showSelectedCountryCode = countryCode
-    this.showSelectedCountry = "UNITED KINGDOM"
+    this.showSelectedCountry = "United kingdom"
 
   }
 }
