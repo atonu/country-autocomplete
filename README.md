@@ -31,4 +31,5 @@ The attributes inside the selector are listed below.
 Special thanks to Hampus Borgos. I took assets from the repository https://github.com/hampusborgos/country-flags. here all rights reserved by Hampus Borgos
 
 ## Running project
+Install dependencies by running `npm i` in terminal.
 In terminal  run `ng serve` to start run the project.
